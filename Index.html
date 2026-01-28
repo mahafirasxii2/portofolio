@@ -1,0 +1,1733 @@
+<!doctype html>
+<html lang="id">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archived Humanie - Koleksi Karya Sastra Terlengkap</title>
+  <meta name="description" content="Arsip lengkap karya sastra: novel, cerpen, puisi, drama, dan dongeng rakyat. Jelajahi khazanah sastra dunia.">
+  <script src="/_sdk/data_sdk.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --bg-primary: #1a1410;
+      --bg-secondary: #2d2419;
+      --text-primary: #e8dcc4;
+      --text-secondary: #c4b5a0;
+      --accent-primary: #8b7355;
+      --accent-secondary: #6b5644;
+      --border-color: #4a3f2f;
+      --shadow: rgba(0, 0, 0, 0.5);
+    }
+    
+    [data-theme="light"] {
+      --bg-primary: #f5f1ea;
+      --bg-secondary: #ffffff;
+      --text-primary: #2d2419;
+      --text-secondary: #4a3f2f;
+      --accent-primary: #8b7355;
+      --accent-secondary: #6b5644;
+      --border-color: #d4c4b0;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Georgia', 'Garamond', serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Header & Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-secondary);
+      border-bottom: 2px solid var(--border-color);
+      z-index: 1000;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+    
+    header.hidden {
+      transform: translateY(-100%);
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      gap: 2rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent-primary);
+      text-decoration: none;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex: 1;
+      justify-content: center;
+    }
+    
+    .nav-links a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-primary);
+      transition: width 0.3s;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .nav-controls {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    .icon-btn {
+      background: none;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.5rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s;
+      font-size: 1.2rem;
+    }
+    
+    .icon-btn:hover {
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      border-color: var(--accent-primary);
+    }
+    
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      margin-top: 80px;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 2rem;
+    }
+    
+    .hero::before {
+      content: '📚';
+      position: absolute;
+      font-size: 20rem;
+      opacity: 0.05;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-15deg);
+    }
+    
+    .hero-content {
+      text-align: center;
+      max-width: 800px;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent-primary);
+      letter-spacing: 3px;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: var(--text-secondary);
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+    
+    .search-bar-container {
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+    
+    .search-bar {
+      display: flex;
+      gap: 0.5rem;
+      background: var(--bg-secondary);
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 2px solid var(--border-color);
+    }
+    
+    .search-bar input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: none;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 1rem;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+    
+    .search-bar button {
+      padding: 0.75rem 2rem;
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+      font-family: inherit;
+    }
+    
+    .search-bar button:hover {
+      background: var(--accent-secondary);
+    }
+    
+    /* Stats Counter */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+      background: var(--bg-secondary);
+      border-top: 2px solid var(--border-color);
+      border-bottom: 2px solid var(--border-color);
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--accent-primary);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    /* Main Content */
+    main {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .content-area {
+      min-width: 0;
+    }
+    
+    /* Categories Section */
+    .categories {
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--accent-primary);
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .category-card {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 2px solid var(--border-color);
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 5px 20px var(--shadow);
+    }
+    
+    .category-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .category-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    
+    .category-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    /* Featured Works */
+    .featured-works {
+      margin-bottom: 3rem;
+    }
+    
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    .work-card {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid var(--border-color);
+      transition: all 0.3s;
+    }
+    
+    .work-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px var(--shadow);
+    }
+    
+    .work-cover {
+      height: 200px;
+      background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+    
+    .work-info {
+      padding: 1.5rem;
+    }
+    
+    .work-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    
+    .work-author {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .work-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 1rem;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+    
+    .sidebar-section {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 2px solid var(--border-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    .sidebar-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--accent-primary);
+    }
+    
+    .sidebar-list {
+      list-style: none;
+    }
+    
+    .sidebar-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .sidebar-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .sidebar-list a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .sidebar-list a:hover {
+      color: var(--accent-primary);
+    }
+    
+    /* Forum Section */
+    .forum-section {
+      margin-bottom: 3rem;
+    }
+    
+    .forum-topics {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      border: 2px solid var(--border-color);
+      overflow: hidden;
+    }
+    
+    .forum-topic {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .forum-topic:hover {
+      background: var(--bg-primary);
+    }
+    
+    .forum-topic:last-child {
+      border-bottom: none;
+    }
+    
+    .topic-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    
+    .topic-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    
+    /* Shop Section */
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .product-card {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid var(--border-color);
+      transition: all 0.3s;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px var(--shadow);
+    }
+    
+    .product-image {
+      height: 180px;
+      background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    
+    .product-info {
+      padding: 1rem;
+    }
+    
+    .product-name {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    
+    .product-price {
+      font-size: 1.2rem;
+      color: var(--accent-primary);
+      font-weight: bold;
+    }
+    
+    .btn-add-cart {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+      font-family: inherit;
+    }
+    
+    .btn-add-cart:hover {
+      background: var(--accent-secondary);
+    }
+    
+    /* Contact Form */
+    .contact-section {
+      background: var(--bg-secondary);
+      padding: 3rem;
+      border-radius: 8px;
+      border: 2px solid var(--border-color);
+      margin-bottom: 3rem;
+    }
+    
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+      font-weight: bold;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid var(--border-color);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s;
+      font-family: inherit;
+    }
+    
+    .btn-submit:hover {
+      background: var(--accent-secondary);
+    }
+    
+    .btn-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--bg-secondary);
+      border-top: 2px solid var(--border-color);
+      padding: 3rem 2rem 1rem;
+      margin-top: 3rem;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto 2rem;
+    }
+    
+    .footer-section h4 {
+      color: var(--accent-primary);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-section a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-section a:hover {
+      color: var(--accent-primary);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-secondary);
+    }
+    
+    /* Chatbot */
+    .chatbot-toggle {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 60px;
+      height: 60px;
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      border-radius: 50%;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px var(--shadow);
+      z-index: 999;
+      transition: all 0.3s;
+    }
+    
+    .chatbot-toggle:hover {
+      transform: scale(1.1);
+      background: var(--accent-secondary);
+    }
+    
+    .chatbot-window {
+      position: fixed;
+      bottom: 100px;
+      right: 2rem;
+      width: 350px;
+      height: 500px;
+      background: var(--bg-secondary);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 8px 30px var(--shadow);
+      z-index: 999;
+    }
+    
+    .chatbot-window.active {
+      display: flex;
+    }
+    
+    .chatbot-header {
+      padding: 1rem;
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .chatbot-close {
+      background: none;
+      border: none;
+      color: var(--bg-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .chatbot-messages {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .chat-message {
+      padding: 0.75rem;
+      border-radius: 8px;
+      max-width: 80%;
+    }
+    
+    .chat-message.bot {
+      background: var(--bg-primary);
+      align-self: flex-start;
+    }
+    
+    .chat-message.user {
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      align-self: flex-end;
+    }
+    
+    .chatbot-input {
+      padding: 1rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .chatbot-input input {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      border-radius: 4px;
+      font-family: inherit;
+    }
+    
+    .chatbot-input button {
+      padding: 0.5rem 1rem;
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    
+    .modal.active {
+      display: flex;
+    }
+    
+    .modal-content {
+      background: var(--bg-secondary);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 80%;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+    
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px var(--shadow);
+      z-index: 3000;
+      display: none;
+      animation: slideUp 0.3s ease-out;
+    }
+    
+    .toast.active {
+      display: block;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideUp {
+      from {
+        transform: translateX(-50%) translateY(100px);
+      }
+      to {
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      
+      .sidebar {
+        position: static;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--bg-secondary);
+        flex-direction: column;
+        padding: 2rem;
+        border-bottom: 2px solid var(--border-color);
+        display: none;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .category-grid,
+      .works-grid,
+      .shop-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .chatbot-window {
+        width: calc(100% - 2rem);
+        right: 1rem;
+        left: 1rem;
+      }
+      
+      .chatbot-toggle {
+        right: 1rem;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Header & Navigation -->
+  <header id="header">
+   <nav class="container"><a href="#" class="logo"> <span>📖</span> <span id="siteTitle">Archived Humanie</span> </a>
+    <ul class="nav-links" id="navLinks">
+     <li><a href="#beranda" id="nav-home">Beranda</a></li>
+     <li><a href="#kategori" id="nav-categories">Kategori</a></li>
+     <li><a href="#forum" id="nav-forum">Forum</a></li>
+     <li><a href="#artikel" id="nav-articles">Artikel</a></li>
+     <li><a href="#toko" id="nav-shop">Toko</a></li>
+     <li><a href="#kontak" id="nav-contact">Kontak</a></li>
+    </ul>
+    <div class="nav-controls"><button class="icon-btn" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button> <button class="icon-btn" id="langToggle" title="Language">🌐</button> <button class="mobile-toggle" id="mobileToggle">☰</button>
+    </div>
+   </nav>
+  </header><!-- Hero Section -->
+  <section class="hero" id="beranda">
+   <div class="hero-content">
+    <h1 id="heroTitle">Jelajahi Khazanah Sastra</h1>
+    <p id="heroSubtitle">Ribuan karya sastra dalam satu tempat. Novel, cerpen, puisi, drama, dan dongeng rakyat.</p>
+    <div class="search-bar-container">
+     <div class="search-bar"><input type="search" id="searchInput" placeholder="Cari judul, penulis, atau kata kunci..."> <button id="searchBtn">Cari</button>
+     </div>
+    </div>
+   </div>
+  </section><!-- Statistics Counter -->
+  <section class="stats">
+   <div class="stat-item"><span class="stat-number" data-target="5420">0</span> <span class="stat-label" id="stat-works">Karya Sastra</span>
+   </div>
+   <div class="stat-item"><span class="stat-number" data-target="1250">0</span> <span class="stat-label" id="stat-authors">Penulis</span>
+   </div>
+   <div class="stat-item"><span class="stat-number" data-target="32000">0</span> <span class="stat-label" id="stat-visitors">Pengunjung</span>
+   </div>
+   <div class="stat-item"><span class="stat-number" data-target="890">0</span> <span class="stat-label" id="stat-articles">Artikel</span>
+   </div>
+  </section><!-- Main Content -->
+  <main>
+   <div class="content-area"><!-- Categories Section -->
+    <section class="categories" id="kategori">
+     <h2 class="section-title"><span>📚</span> <span id="categories-title">Kategori Karya Sastra</span></h2>
+     <div class="category-grid">
+      <div class="category-card" data-category="novel">
+       <div class="category-icon">
+        📕
+       </div>
+       <h3>Novel</h3>
+       <p id="cat-novel-desc">Koleksi novel Indonesia terlengkap</p>
+      </div>
+      <div class="category-card" data-category="cerpen">
+       <div class="category-icon">
+        📄
+       </div>
+       <h3>Cerpen</h3>
+       <p id="cat-cerpen-desc">Cerita pendek pilihan terbaik</p>
+      </div>
+      <div class="category-card" data-category="puisi">
+       <div class="category-icon">
+        ✒️
+       </div>
+       <h3>Puisi</h3>
+       <p id="cat-puisi-desc">Kumpulan puisi dari berbagai penyair</p>
+      </div>
+      <div class="category-card" data-category="drama">
+       <div class="category-icon">
+        🎭
+       </div>
+       <h3>Drama</h3>
+       <p id="cat-drama-desc">Naskah drama teater dan radio</p>
+      </div>
+      <div class="category-card" data-category="dongeng">
+       <div class="category-icon">
+        🏰
+       </div>
+       <h3>Dongeng Rakyat</h3>
+       <p id="cat-dongeng-desc">Dongeng dari berbagai daerah</p>
+      </div>
+     </div>
+    </section><!-- Featured Works -->
+    <section class="featured-works">
+     <h2 class="section-title"><span>⭐</span> <span id="featured-title">Karya Terbaru</span></h2>
+     <div class="works-grid">
+      <div class="work-card">
+       <div class="work-cover">
+        📕
+       </div>
+       <div class="work-info">
+        <h3 class="work-title">Don Quixote</h3>
+        <p class="work-author">Miguel de Carventes</p>
+        <div class="work-meta"><span>⭐ 4.8</span> <span>👁️ 12,340</span>
+        </div>
+       </div>
+      </div>
+      <div class="work-card">
+       <div class="work-cover">
+        📄
+       </div>
+       <div class="work-info">
+        <h3 class="work-title">Robohnya Surau Kami</h3>
+        <p class="work-author">A.A. Navis</p>
+        <div class="work-meta"><span>⭐ 4.9</span> <span>👁️ 8,920</span>
+        </div>
+       </div>
+      </div>
+      <div class="work-card">
+       <div class="work-cover">
+        ✒️
+       </div>
+       <div class="work-info">
+        <h3 class="work-title">Aku</h3>
+        <p class="work-author">Chairil Anwar</p>
+        <div class="work-meta"><span>⭐ 5.0</span> <span>👁️ 15,670</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Forum Section -->
+    <section class="forum-section" id="forum">
+     <h2 class="section-title"><span>💬</span> <span id="forum-title">Forum Diskusi</span></h2>
+     <div class="forum-topics">
+      <div class="forum-topic">
+       <h3 class="topic-title">Analisis tema dalam karya Pramoedya</h3>
+       <div class="topic-meta"><span>👤 Budi Santoso</span> <span>💬 23 balasan</span> <span>🕒 2 jam lalu</span>
+       </div>
+      </div>
+      <div class="forum-topic">
+       <h3 class="topic-title">Rekomendasi novel sejarah terbaik</h3>
+       <div class="topic-meta"><span>👤 Siti Aminah</span> <span>💬 45 balasan</span> <span>🕒 5 jam lalu</span>
+       </div>
+      </div>
+      <div class="forum-topic">
+       <h3 class="topic-title">Tips menulis cerpen untuk pemula</h3>
+       <div class="topic-meta"><span>👤 Ahmad Fauzi</span> <span>💬 67 balasan</span> <span>🕒 1 hari lalu</span>
+       </div>
+      </div>
+     </div>
+    </section><!-- Articles Section -->
+    <section class="featured-works" id="artikel">
+     <h2 class="section-title"><span>📰</span> <span id="articles-title">Artikel Sastra</span></h2>
+     <div class="works-grid">
+      <div class="work-card">
+       <div class="work-cover">
+        📰
+       </div>
+       <div class="work-info">
+        <h3 class="work-title">Sejarah Sastra Indonesia Modern</h3>
+        <p class="work-author">Tim Redaksi</p>
+        <div class="work-meta"><span>📅 15 Des 2024</span> <span>👁️ 3,240</span>
+        </div>
+       </div>
+      </div>
+      <div class="work-card">
+       <div class="work-cover">
+        📰
+       </div>
+       <div class="work-info">
+        <h3 class="work-title">Membedah Gaya Bahasa Penyair</h3>
+        <p class="work-author">Dr. Sari Mulyani</p>
+        <div class="work-meta"><span>📅 12 Des 2024</span> <span>👁️ 2,890</span>
+        </div>
+       </div>
+      </div>
+      <div class="work-card">
+       <div class="work-cover">
+        📰
+       </div>
+       <div class="work-info">
+        <h3 class="work-title">Dongeng Sebagai Media Pendidikan</h3>
+        <p class="work-author">Prof. Hendro Wijaya</p>
+        <div class="work-meta"><span>📅 10 Des 2024</span> <span>👁️ 4,120</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Shop Section -->
+    <section class="featured-works" id="toko">
+     <h2 class="section-title"><span>🛒</span> <span id="shop-title">Toko Buku</span></h2>
+     <div class="shop-grid">
+      <div class="product-card">
+       <div class="product-image">
+        📕
+       </div>
+       <div class="product-info">
+        <h4 class="product-name">Bumi Manusia</h4>
+        <p class="product-price">Rp 89.000</p><button class="btn-add-cart">Tambah ke Keranjang</button>
+       </div>
+      </div>
+      <div class="product-card">
+       <div class="product-image">
+        📗
+       </div>
+       <div class="product-info">
+        <h4 class="product-name">Cantik Itu Luka</h4>
+        <p class="product-price">Rp 95.000</p><button class="btn-add-cart">Tambah ke Keranjang</button>
+       </div>
+      </div>
+      <div class="product-card">
+       <div class="product-image">
+        📘
+       </div>
+       <div class="product-info">
+        <h4 class="product-name">Pulang</h4>
+        <p class="product-price">Rp 78.000</p><button class="btn-add-cart">Tambah ke Keranjang</button>
+       </div>
+      </div>
+      <div class="product-card">
+       <div class="product-image">
+        📙
+       </div>
+       <div class="product-info">
+        <h4 class="product-name">Ronggeng Dukuh Paruk</h4>
+        <p class="product-price">Rp 85.000</p><button class="btn-add-cart">Tambah ke Keranjang</button>
+       </div>
+      </div>
+     </div>
+    </section><!-- Contact Form Section -->
+    <section class="contact-section" id="kontak">
+     <h2 class="section-title"><span>✉️</span> <span id="contact-title">Saran dan Keluhan</span></h2>
+     <form class="contact-form" id="contactForm">
+      <div class="form-group"><label for="contactName" id="label-name">Nama Lengkap</label> <input type="text" id="contactName" required>
+      </div>
+      <div class="form-group"><label for="contactEmail" id="label-email">Email</label> <input type="email" id="contactEmail" required>
+      </div>
+      <div class="form-group"><label for="contactType" id="label-type">Jenis Pesan</label> <select id="contactType"> <option value="saran">Saran</option> <option value="keluhan">Keluhan</option> <option value="pertanyaan">Pertanyaan</option> <option value="kerjasama">Kerjasama</option> </select>
+      </div>
+      <div class="form-group"><label for="contactMessage" id="label-message">Pesan Anda</label> <textarea id="contactMessage" required></textarea>
+      </div><button type="submit" class="btn-submit" id="submitBtn"> <span id="btn-submit-text">Kirim Pesan</span> </button>
+     </form>
+    </section>
+   </div><!-- Sidebar -->
+   <aside class="sidebar">
+    <div class="sidebar-section">
+     <h3 id="sidebar-popular">Paling Populer</h3>
+     <ul class="sidebar-list">
+      <li><a href="#">Laskar Pelangi</a></li>
+      <li><a href="#">Bumi Manusia</a></li>
+      <li><a href="#">Sang Pemimpi</a></li>
+      <li><a href="#">Cantik Itu Luka</a></li>
+      <li><a href="#">Pulang</a></li>
+     </ul>
+    </div>
+    <div class="sidebar-section">
+     <h3 id="sidebar-authors">Penulis Terkenal</h3>
+     <ul class="sidebar-list">
+      <li><a href="#">Pramoedya Ananta Toer</a></li>
+      <li><a href="#">Andrea Hirata</a></li>
+      <li><a href="#">Eka Kurniawan</a></li>
+      <li><a href="#">Dee Lestari</a></li>
+      <li><a href="#">Leila S. Chudori</a></li>
+     </ul>
+    </div>
+    <div class="sidebar-section">
+     <h3 id="sidebar-genres">Genre Populer</h3>
+     <ul class="sidebar-list">
+      <li><a href="#">Fiksi Sejarah</a></li>
+      <li><a href="#">Romantis</a></li>
+      <li><a href="#">Misteri</a></li>
+      <li><a href="#">Anak-anak</a></li>
+      <li><a href="#">Biografi</a></li>
+     </ul>
+    </div>
+   </aside>
+  </main><!-- Footer -->
+  <footer>
+   <div class="footer-content">
+    <div class="footer-section">
+     <h4 id="footer-about">Tentang Kami</h4>
+     <p id="footerText">Arsip Sastra adalah platform digital yang mengarsipkan dan melestarikan karya sastra Indonesia untuk generasi mendatang.</p>
+    </div>
+    <div class="footer-section">
+     <h4 id="footer-links">Tautan Cepat</h4>
+     <ul>
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#kategori">Kategori</a></li>
+      <li><a href="#forum">Forum</a></li>
+      <li><a href="#artikel">Artikel</a></li>
+      <li><a href="#toko">Toko</a></li>
+     </ul>
+    </div>
+    <div class="footer-section">
+     <h4 id="footer-follow">Ikuti Kami</h4>
+     <ul>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">YouTube</a></li>
+     </ul>
+    </div>
+    <div class="footer-section">
+     <h4 id="footer-contact">Kontak</h4>
+     <p>Email: info@arsifsastra.id</p>
+     <p>Phone: +62 21 1234 5678</p>
+     <p>Jakarta, Indonesia</p>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <p>© 2024 Archived Humanie. All rights reserved.</p>
+   </div>
+  </footer><!-- Chatbot --> <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+  <div class="chatbot-window" id="chatbotWindow">
+   <div class="chatbot-header">
+    <h3 id="chatbot-title">Asisten Virtual</h3><button class="chatbot-close" id="chatbotClose">×</button>
+   </div>
+   <div class="chatbot-messages" id="chatbotMessages">
+    <div class="chat-message bot" id="initial-message">
+     Halo! Ada yang bisa saya bantu?
+    </div>
+   </div>
+   <div class="chatbot-input"><input type="text" id="chatInput" placeholder="Ketik pesan..."> <button id="chatSend">Kirim</button>
+   </div>
+  </div><!-- Toast Notification -->
+  <div class="toast" id="toast"></div><!-- Modal -->
+  <div class="modal" id="modal">
+   <div class="modal-content"><button class="modal-close" id="modalClose">×</button>
+    <div id="modalBody"></div>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      site_title: "Archived Humanie",
+      site_tagline: "Koleksi Karya Sastra Terlengkap",
+      hero_title: "Jelajahi Khazanah Sastra",
+      hero_subtitle: "Ribuan karya sastra dalam satu tempat. Novel, cerpen, puisi, drama, dan dongeng rakyat.",
+      about_title: "Tentang Kami",
+      footer_text: "Archived Humanie  adalah platform digital yang mengarsipkan dan melestarikan karya sastra untuk generasi mendatang.",
+      background_color: "#1a1410",
+      surface_color: "#2d2419",
+      text_color: "#e8dcc4",
+      primary_action_color: "#8b7355",
+      secondary_action_color: "#6b5644",
+      font_family: "Georgia",
+      font_size: 16
+    };
+
+    // State management
+    let currentLang = 'id';
+    let isDarkMode = true;
+    
+    // Translations
+    const translations = {
+      id: {
+        'nav-home': 'Beranda',
+        'nav-categories': 'Kategori',
+        'nav-forum': 'Forum',
+        'nav-articles': 'Artikel',
+        'nav-shop': 'Toko',
+        'nav-contact': 'Kontak',
+        'searchInput': 'Cari judul, penulis, atau kata kunci...',
+        'searchBtn': 'Cari',
+        'stat-works': 'Karya Sastra',
+        'stat-authors': 'Penulis',
+        'stat-visitors': 'Pengunjung',
+        'stat-articles': 'Artikel',
+        'categories-title': 'Kategori Karya Sastra',
+        'cat-novel-desc': 'Koleksi novel Indonesia terlengkap',
+        'cat-cerpen-desc': 'Cerita pendek pilihan terbaik',
+        'cat-puisi-desc': 'Kumpulan puisi dari berbagai penyair',
+        'cat-drama-desc': 'Naskah drama teater dan radio',
+        'cat-dongeng-desc': 'Dongeng dari berbagai daerah',
+        'featured-title': 'Karya Terbaru',
+        'forum-title': 'Forum Diskusi',
+        'articles-title': 'Artikel Sastra',
+        'shop-title': 'Toko Buku',
+        'contact-title': 'Saran dan Keluhan',
+        'label-name': 'Nama Lengkap',
+        'label-email': 'Email',
+        'label-type': 'Jenis Pesan',
+        'label-message': 'Pesan Anda',
+        'btn-submit-text': 'Kirim Pesan',
+        'sidebar-popular': 'Paling Populer',
+        'sidebar-authors': 'Penulis Terkenal',
+        'sidebar-genres': 'Genre Populer',
+        'footer-about': 'Tentang Kami',
+        'footer-links': 'Tautan Cepat',
+        'footer-follow': 'Ikuti Kami',
+        'footer-contact': 'Kontak',
+        'chatbot-title': 'Asisten Virtual',
+        'initial-message': 'Halo! Ada yang bisa saya bantu?'
+      },
+      en: {
+        'nav-home': 'Home',
+        'nav-categories': 'Categories',
+        'nav-forum': 'Forum',
+        'nav-articles': 'Articles',
+        'nav-shop': 'Shop',
+        'nav-contact': 'Contact',
+        'searchInput': 'Search title, author, or keyword...',
+        'searchBtn': 'Search',
+        'stat-works': 'Literary Works',
+        'stat-authors': 'Authors',
+        'stat-visitors': 'Visitors',
+        'stat-articles': 'Articles',
+        'categories-title': 'Literary Categories',
+        'cat-novel-desc': 'Complete collection of Indonesian novels',
+        'cat-cerpen-desc': 'Best selected short stories',
+        'cat-puisi-desc': 'Poetry collection from various poets',
+        'cat-drama-desc': 'Theater and radio drama scripts',
+        'cat-dongeng-desc': 'Folk tales from various regions',
+        'featured-title': 'Latest Works',
+        'forum-title': 'Discussion Forum',
+        'articles-title': 'Literary Articles',
+        'shop-title': 'Book Store',
+        'contact-title': 'Suggestions and Complaints',
+        'label-name': 'Full Name',
+        'label-email': 'Email',
+        'label-type': 'Message Type',
+        'label-message': 'Your Message',
+        'btn-submit-text': 'Send Message',
+        'sidebar-popular': 'Most Popular',
+        'sidebar-authors': 'Famous Authors',
+        'sidebar-genres': 'Popular Genres',
+        'footer-about': 'About Us',
+        'footer-links': 'Quick Links',
+        'footer-follow': 'Follow Us',
+        'footer-contact': 'Contact',
+        'chatbot-title': 'Virtual Assistant',
+        'initial-message': 'Hello! How can I help you?'
+      }
+    };
+
+    // Data SDK Handler
+    const dataHandler = {
+      onDataChanged(data) {
+        // Update UI with submission count if needed
+        console.log('Data updated:', data.length, 'submissions');
+      }
+    };
+
+    // Initialize Data SDK
+    async function initializeDataSDK() {
+      if (window.dataSdk) {
+        const result = await window.dataSdk.init(dataHandler);
+        if (!result.isOk) {
+          console.error('Failed to initialize Data SDK');
+        }
+      }
+    }
+
+    // Element SDK Implementation
+    async function onConfigChange(config) {
+      const finalConfig = { ...defaultConfig, ...config };
+      
+      // Update text content
+      const siteTitle = document.getElementById('siteTitle');
+      if (siteTitle) siteTitle.textContent = finalConfig.site_title;
+      
+      const heroTitle = document.getElementById('heroTitle');
+      if (heroTitle) heroTitle.textContent = finalConfig.hero_title;
+      
+      const heroSubtitle = document.getElementById('heroSubtitle');
+      if (heroSubtitle) heroSubtitle.textContent = finalConfig.hero_subtitle;
+      
+      const footerText = document.getElementById('footerText');
+      if (footerText) footerText.textContent = finalConfig.footer_text;
+      
+      // Apply colors
+      document.documentElement.style.setProperty('--bg-primary', finalConfig.background_color);
+      document.documentElement.style.setProperty('--bg-secondary', finalConfig.surface_color);
+      document.documentElement.style.setProperty('--text-primary', finalConfig.text_color);
+      document.documentElement.style.setProperty('--accent-primary', finalConfig.primary_action_color);
+      document.documentElement.style.setProperty('--accent-secondary', finalConfig.secondary_action_color);
+      
+      // Apply font
+      const fontStack = `${finalConfig.font_family}, Georgia, Garamond, serif`;
+      document.body.style.fontFamily = fontStack;
+      
+      // Apply font size
+      const baseSize = finalConfig.font_size;
+      document.documentElement.style.fontSize = `${baseSize}px`;
+    }
+
+    function mapToCapabilities(config) {
+      const finalConfig = { ...defaultConfig, ...config };
+      
+      return {
+        recolorables: [
+          {
+            get: () => finalConfig.background_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => finalConfig.surface_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            }
+          },
+          {
+            get: () => finalConfig.text_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => finalConfig.primary_action_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            }
+          },
+          {
+            get: () => finalConfig.secondary_action_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => finalConfig.font_family,
+          set: (value) => {
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          }
+        },
+        fontSizeable: {
+          get: () => finalConfig.font_size,
+          set: (value) => {
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      const finalConfig = { ...defaultConfig, ...config };
+      
+      return new Map([
+        ['site_title', finalConfig.site_title],
+        ['site_tagline', finalConfig.site_tagline],
+        ['hero_title', finalConfig.hero_title],
+        ['hero_subtitle', finalConfig.hero_subtitle],
+        ['about_title', finalConfig.about_title],
+        ['footer_text', finalConfig.footer_text]
+      ]);
+    }
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    // Initialize both SDKs
+    initializeDataSDK();
+
+    // Show toast notification
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('active');
+      setTimeout(() => {
+        toast.classList.remove('active');
+      }, 3000);
+    }
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    
+    themeToggle.addEventListener('click', () => {
+      isDarkMode = !isDarkMode;
+      document.body.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+      themeToggle.textContent = isDarkMode ? '🌙' : '☀️';
+      showToast(isDarkMode ? 'Mode gelap aktif' : 'Mode terang aktif');
+    });
+
+    // Language toggle
+    const langToggle = document.getElementById('langToggle');
+    
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      updateLanguage();
+      showToast(currentLang === 'id' ? 'Bahasa Indonesia' : 'English');
+    });
+
+    function updateLanguage() {
+      const trans = translations[currentLang];
+      Object.keys(trans).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+          if (element.tagName === 'INPUT') {
+            element.placeholder = trans[key];
+          } else {
+            element.textContent = trans[key];
+          }
+        }
+      });
+    }
+
+    // Search functionality
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+    
+    searchBtn.addEventListener('click', () => {
+      const query = searchInput.value.trim();
+      if (query) {
+        showToast(`Mencari: ${query}`);
+      }
+    });
+
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        searchBtn.click();
+      }
+    });
+
+    // Counter animation
+    function animateCounter() {
+      const counters = document.querySelectorAll('.stat-number');
+      
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            counter.textContent = target.toLocaleString();
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.floor(current).toLocaleString();
+          }
+        }, 16);
+      });
+    }
+
+    // Trigger counter animation on scroll
+    const statsSection = document.querySelector('.stats');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(statsSection);
+
+    // Chatbot functionality
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const chatbotClose = document.getElementById('chatbotClose');
+    const chatSend = document.getElementById('chatSend');
+    const chatInput = document.getElementById('chatInput');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+
+    chatbotToggle.addEventListener('click', () => {
+      chatbotWindow.classList.add('active');
+    });
+
+    chatbotClose.addEventListener('click', () => {
+      chatbotWindow.classList.remove('active');
+    });
+
+    function addChatMessage(message, isUser = false) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `chat-message ${isUser ? 'user' : 'bot'}`;
+      messageDiv.textContent = message;
+      chatbotMessages.appendChild(messageDiv);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    chatSend.addEventListener('click', () => {
+      const message = chatInput.value.trim();
+      if (message) {
+        addChatMessage(message, true);
+        chatInput.value = '';
+        
+        setTimeout(() => {
+          const responses = [
+            'Terima kasih atas pertanyaan Anda. Tim kami akan segera membantu.',
+            'Silakan kunjungi halaman FAQ untuk informasi lebih lanjut.',
+            'Saya dapat membantu Anda menemukan karya sastra yang tepat.',
+            'Apakah ada genre tertentu yang Anda cari?'
+          ];
+          const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+          addChatMessage(randomResponse);
+        }, 1000);
+      }
+    });
+
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        chatSend.click();
+      }
+    });
+
+    // Contact form submission
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('contactName').value;
+      const email = document.getElementById('contactEmail').value;
+      const type = document.getElementById('contactType').value;
+      const message = document.getElementById('contactMessage').value;
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Mengirim...';
+      
+      if (window.dataSdk) {
+        const result = await window.dataSdk.create({
+          id: Date.now().toString(),
+          type: type,
+          name: name,
+          email: email,
+          message: message,
+          timestamp: new Date().toISOString()
+        });
+        
+        if (result.isOk) {
+          showToast('Pesan berhasil dikirim!');
+          contactForm.reset();
+        } else {
+          showToast('Gagal mengirim pesan. Silakan coba lagi.');
+        }
+      } else {
+        setTimeout(() => {
+          showToast('Pesan berhasil dikirim!');
+          contactForm.reset();
+        }, 1000);
+      }
+      
+      submitBtn.disabled = false;
+      submitBtn.textContent = currentLang === 'id' ? 'Kirim Pesan' : 'Send Message';
+    });
+
+    // Add to cart functionality
+    const addToCartButtons = document.querySelectorAll('.btn-add-cart');
+    
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const productName = button.closest('.product-card').querySelector('.product-name').textContent;
+        showToast(`${productName} ditambahkan ke keranjang`);
+      });
+    });
+
+    // Category card click
+    const categoryCards = document.querySelectorAll('.category-card');
+    
+    categoryCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const category = card.getAttribute('data-category');
+        showToast(`Membuka kategori: ${category}`);
+      });
+    });
+
+    // Header scroll behavior
+    let lastScroll = 0;
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+      
+      lastScroll = currentScroll;
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+          }
+        }
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a1dd33bf6f3e793',t:'MTc2MzcwMzM0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
